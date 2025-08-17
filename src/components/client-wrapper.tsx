@@ -8,7 +8,7 @@ import { ReactNode } from "react";
 export function ClientWrapper({ children }: { children: ReactNode }) {
   return (
     <CopilotKit
-      publicApiKey={process.env.NEXT_PUBLIC_CPK_PUBLIC_API_KEY}
+      publicApiKey={process.env.NEXT_PUBLIC_CPK_PUBLIC_API_KEY || "ck_pub_634ad133985d5452f3b0203ac2ff7ddd"}
       showDevConsole={false}
     >
       <GlobalStateProvider>
