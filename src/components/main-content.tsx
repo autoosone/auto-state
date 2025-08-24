@@ -23,5 +23,14 @@ export function MainContent() {
     },
   ];
 
-  return <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />;
+  return (
+    <div className="h-full w-full p-2 sm:p-4">
+      <Tabs 
+        tabs={tabs} 
+        activeTab={activeTab} 
+        onTabChange={setActiveTab}
+        className="h-full"
+      />
+    </div>
+  );
 }

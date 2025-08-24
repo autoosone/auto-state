@@ -53,6 +53,7 @@ export function CarSalesChat({ className }: ChatProps) {
     <div
       className={cn(
         "flex flex-col h-full max-h-full w-full rounded-xl shadow-sm border border-neutral-200",
+        "min-h-[500px] lg:min-h-[600px]", // Responsive height
         className,
       )}
     >

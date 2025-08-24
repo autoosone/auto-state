@@ -12,10 +12,12 @@ export function ClientWrapper({ children }: { children: ReactNode }) {
       showDevConsole={false}
     >
       <GlobalStateProvider>
-        <div className="h-screen w-screen grid grid-cols-[40fr,60fr] p-10 gap-5">
-          <div className="overflow-y-auto rounded-xl border">{children}</div>
-          <div className="flex justify-center items-center overflow-y-auto rounded-xl">
-            <CarSalesChat className="w-full" />
+        <div className="h-full w-full min-h-screen grid grid-cols-1 lg:grid-cols-[35fr,65fr] p-4 sm:p-6 lg:p-8 gap-4 sm:gap-6">
+          <div className="overflow-y-auto rounded-xl border min-h-[400px] lg:min-h-[600px]">
+            {children}
+          </div>
+          <div className="flex justify-center items-start overflow-y-auto rounded-xl min-h-[500px] lg:min-h-[600px]">
+            <CarSalesChat className="w-full h-full" />
           </div>
         </div>
       </GlobalStateProvider>

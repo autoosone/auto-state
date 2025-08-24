@@ -12,6 +12,7 @@ interface TabsProps {
   tabs: Tab[];
   activeTab: string;
   onTabChange: (tabId: string) => void;
+  className?: string;
   wrapperClassName?: string;
   navClassName?: string;
   buttonClassName?: string;
@@ -24,15 +25,17 @@ export function Tabs({
   tabs,
   activeTab,
   onTabChange,
+  className,
   wrapperClassName = "h-full bg-white flex flex-col rounded-lg shadow-sm",
-  navClassName = "p-6 pb-0",
-  buttonClassName = "w-1/2 py-4 text-base font-medium transition-all duration-200 text-center border-b",
+  navClassName = "p-4 sm:p-6 pb-0",
+  buttonClassName = "w-1/2 py-3 sm:py-4 text-sm sm:text-base font-medium transition-all duration-200 text-center border-b",
   activeButtonClassName = "text-pink-600 border-pink-600",
   inactiveButtonClassName = "text-neutral-500 border-neutral-200 hover:text-neutral-700 hover:border-neutral-300",
-  contentClassName = "p-6 overflow-y-auto flex-1",
+  contentClassName = "p-4 sm:p-6 overflow-y-auto flex-1",
 }: TabsProps) {
+  const finalWrapperClassName = className ? `${wrapperClassName} ${className}` : wrapperClassName;
   return (
-    <div className={wrapperClassName}>
+    <div className={finalWrapperClassName}>
       <nav className={navClassName}>
         <div className="flex w-full">
           {tabs.map(({ id, label }) => (
