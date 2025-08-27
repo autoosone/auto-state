@@ -61,7 +61,7 @@ export function GlobalStateProvider({ children }: { children: ReactNode }) {
             session_id: newSessionId,
             current_stage: 'getContactInfo',
             started_at: new Date().toISOString(),
-            last_activity: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
             is_active: true
           })
           .select()
@@ -96,7 +96,7 @@ export function GlobalStateProvider({ children }: { children: ReactNode }) {
           .from('car_sales_sessions')
           .update({ 
             current_stage: stage,
-            last_activity: new Date().toISOString()
+            updated_at: new Date().toISOString()
           })
           .eq('id', dbSessionId);
         

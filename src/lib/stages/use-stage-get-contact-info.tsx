@@ -68,7 +68,7 @@ export function useStageGetContactInfo() {
                       .from('car_sales_sessions')
                       .update({ 
                         contact_info_completed: true,
-                        last_activity: new Date().toISOString()
+                        updated_at: new Date().toISOString()
                       })
                       .eq('id', dbSessionId);
                     
